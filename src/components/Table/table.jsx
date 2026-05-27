@@ -39,7 +39,7 @@ const Table = ({ users, friends = [], interests = {} }) => {
 
     function getFriendsSuggestion(userId) {
         const directFriends = getDirectFriends(userId)
-
+        
         const suggestedFriends = new Set()
         friends.forEach(([friendId1, friendId2]) => {
             if (directFriends.has(friendId1) && friendId2 !== userId && !directFriends.has(friendId2)) {
@@ -51,34 +51,33 @@ const Table = ({ users, friends = [], interests = {} }) => {
             const user = users.find(u => u.id === id)
             return user.name
         })
-
         return suggestedNames.length > 0 ? suggestedNames.join(', ') : ''
     }
 
     function getInterestsSuggestions(userId) {
         const directInterests = getDirectInterests(userId)
-
         const friendsInterests = new Set()
         const directFriends = getDirectFriends(userId)
+
         directFriends.forEach(friendId => {
             const userInterests = getDirectInterests(friendId)
             userInterests.forEach(interest => {
                 friendsInterests.add(interest)
             })
         })
-
+        
         const suggestedInterests = Array.from(friendsInterests).filter(
             interest => !directInterests.has(interest)
         )
-
         return suggestedInterests.length > 0 ? suggestedInterests.join(', ') : ''
     }
 
     return (
         <div className={classes.body}>
             <div className={classes.tableTitle}>
-                <p>Users</p>
+                <p><strong>Users</strong></p>
             </div>
+
             <table className={`${classes.table} ${classes.striped}`}>
                 <thead>
                     <tr>
@@ -99,7 +98,7 @@ const Table = ({ users, friends = [], interests = {} }) => {
                     ))}
                 </tbody>
             </table>
-            <div className={classes.button}>
+            <div className={classes.buttonArea}>
                 <span>Sort: </span>
                 <button className={classes.buttonSort} onClick={toggleSort}>
                     {sortDirection === 'asc' ? 'Name A-Z' : 'Name Z-A'}

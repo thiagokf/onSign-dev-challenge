@@ -1,16 +1,43 @@
-# React + Vite
+# OnSign TV - Dev Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains my solution for the OnSign TV Frontend Developer Challenge.
+The project consists of a Single Page Application (SPA) built with React and Vite that processes relational data from a recommendation API and displays it in a table.
 
-Currently, two official plugins are available:
+## Tech Stack
+- **Framework:** React 18
+- **Build Tool:** Vite
+- **Styling:** CSS Modules (Native & Clean approach)
+- **Language:** JavaScript (ES6+)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Installation and Setup
+Follow these simple steps to run the project locally
 
-## React Compiler
+### Prerequisites
+Make sure you have Node.js installed (v18 or higher recommended).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1. Extract and Navigate
+Extract the provided .zip file to a folder of your choice. <br>
+Open your terminal and navigate to the project root directory:
+```bash
+cd path/to/extracted/onSing-dev-challenge
+```
+### 2. Install Dependencies
+```
+npm install
+```
 
-## Expanding the ESLint configuration
+### 3. Configure Environment Variables
+1. Duplicate the .env.example file and rename it to .env:
+```bash
+cp .env.example .env
+```
+2. Open the .env file and insert the API access token:
+```
+VITE_API_TOKEN=ACCESS_TOKEN
+```
+### 4. Run the Development Server
+```
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+After all this, open http://localhost:5173 in your browser to view the running application.
