@@ -33,7 +33,7 @@ cp .env.example .env
 ```
 2. Open the .env file and insert the API access token:
 ```
-VITE_API_TOKEN=ACCESS_TOKEN
+VITE_ONSIGN_API_ACCESS_TOKEN=ACCESS_TOKEN
 ```
 ### 4. Run the Development Server
 ```
